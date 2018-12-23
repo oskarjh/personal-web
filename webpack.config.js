@@ -2,6 +2,7 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
+
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
@@ -30,7 +31,7 @@ module.exports = {
         include : SRC_DIR,
         loader : 'babel-loader',      
         query: {
-          presets: ['react', 'es2015']
+          presets: ['@babel/preset-env', '@babel/preset-react']
        }
       }
     ]
